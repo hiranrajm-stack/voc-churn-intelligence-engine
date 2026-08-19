@@ -1,4 +1,3 @@
-## Rank issue categories for each app by total complaint volume ##
 select a.app_name,c.issue_category,
 count(*) as issue_count,
 dense_rank()over(partition by a.app_name order by count(*) desc) as category_rank
